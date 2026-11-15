@@ -18,20 +18,22 @@ worker_type = input("Worker type:")
 #print("Worker type: ", worker_type)
 #print("Contract length (months): ")
 
-#flag for hr contract approval
-hr_approval = True 
+
+
 #IF worker type is contractor with lower case 
 if worker_type.lower() == "contractor":
     #IF the worker type is a contractor, the user name should be prefixed with a c-
     user_name = "c-" + first_name[0] + last_name 
     print(f"--- Onboarding Summary ---\n Username: {user_name.lower()} \n Type: {worker_type}")
+    #flag for hr contract approval
+    needs_hr_approval = False
     #INPUT contract length , convert data type to integer
     contract_length = int(input("Contract length (months): "))
-    if contract_length <= 12:
+    if contract_length > 12:
         #IF the contract length is less than or equal to 12 , the flag is false
-        hr_approval= False
-    else:
+        needs_hr_approval= True
         print("Contract exceeds 12 months, so HR re-approval is required.")
+        
 else:
     user_name = first_name[0] + last_name
     print(f"--- Onboarding Summary ---\nUsername: {user_name.lower()} \nType: {worker_type}")
