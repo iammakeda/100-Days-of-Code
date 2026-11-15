@@ -12,3 +12,4 @@ I work in IT onboarding/offboarding and I'm pivoting into IAM Engineering. This 
 | 3 | Password Policy Checker | if/else, flags, .count() | Password policy enforcement |
 | 3 | Access Request Approver | nested if, != , and/or | Default deny, approval gates |
 | 3 | Stale Account Detector | elif chains, // and % | Account lifecycle, inactivity policy |
+| 3 | Onboarding Username Generator | flags, nested if, string indexing | Joiner provisioning, naming conventions|
