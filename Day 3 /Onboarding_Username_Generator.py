@@ -24,7 +24,6 @@ worker_type = input("Worker type:")
 if worker_type.lower() == "contractor":
     #IF the worker type is a contractor, the user name should be prefixed with a c-
     user_name = "c-" + first_name[0] + last_name 
-    print(f"--- Onboarding Summary ---\n Username: {user_name.lower()} \n Type: {worker_type}")
     #flag for hr contract approval
     needs_hr_approval = False
     #INPUT contract length , convert data type to integer
@@ -33,9 +32,10 @@ if worker_type.lower() == "contractor":
         #IF the contract length is less than or equal to 12 , the flag is false
         needs_hr_approval= True
         print("Contract exceeds 12 months, so HR re-approval is required.")
-        
+#ELIF worker type is employee, the username is created by the first character of first name and whole last name
+elif worker_type.lower() == "employee":
+    user_name = first_name[0] + last_name      
 else:
-    user_name = first_name[0] + last_name
-    print(f"--- Onboarding Summary ---\nUsername: {user_name.lower()} \nType: {worker_type}")
-
+    if worker_type.lower() != "employee" and worker_type.lower() != "contractor":
+        print("Work type unrecognized. Please try again")
 
