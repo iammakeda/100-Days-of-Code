@@ -1,0 +1,23 @@
+#GOAL: access review spot check . Enter a comma-separate list of users, and the script
+#randomly picks one for an access audit
+
+# TODO: Will need to test edge cases for when someone types a trailing comma, leading to a blank as a "name" pick and if a space is left in from or in back of a name
+# TODO: shorten comments
+
+# Req: take the names as one input string and turn it into a list
+#Use random.randint and an index to pick
+#print who is selected for a review
+#import random module 
+import random
+
+#Input would be entered as one element in the list, I googled how to separate input and make it into a list. 
+#.split() method removes the need for the brackets as it creates a list. And since I am using  commas to separate the names, it tells the script 
+# to  split the string at that character, which is the comma
+names_of_users = input("Enter the name of users you want to add to the pool : \n").split(",")
+
+#created variable that holds the random.randint function. The range is from 0, and since the length of the list can vary depending on the input size
+# the second argument is the length of the name_of_users list, minus 1, since we start at zero for counting in python
+randomize_list_index = random.randint(0, len(names_of_users)-1)
+#Created variable that holds the value of the list and then the index of the element in the list which is randomize_list_range
+name_pick = names_of_users[randomize_list_index]
+print(f"This user's account has been chosen for access review: {name_pick}")
